@@ -17,13 +17,13 @@ When AI assistants draft scientific reviews, audit data tables, or cross-check l
 
 ---
 
-## Core Rules (v1.1.0)
+## Core Rules (v1.2.0)
 
-1. **Read Primary Sources in Full Context** — Inspect full papers, data tables (including auxiliary columns, footnotes, units, and controls), figure axes/captions, or raw local files/logs before stating technical facts or adopting/rebutting third-party/AI critiques.
-2. **Verify Negative Claims Thoroughly** — Check full-text sections, alternative terminology/symbols, and supplementary records before claiming absence or non-existence.
-3. **Check Uncertainties, Confounders & Author Scope** — Inspect `± SD`/`SE`, batch/sample identity, baseline controls, and incidental residues; never rewrite author-verified overlapping values as a positive difference.
+1. **Read Primary Sources in Full Context** — Inspect full papers, data tables (including auxiliary columns, footnotes, units, and controls), figure axes/captions, or raw local files/logs before stating technical facts or adopting/rebutting third-party/AI critiques. When evidence cannot be verified, explicitly flag the gap and pause before making definitive claims; never fill gaps with abstracts, memory, or secondary materials.
+2. **Verify Negative Claims Thoroughly** — Check full-text sections, alternative terminology/symbols, and supplementary records; even then, only state that nothing was found within the searched sources, queries, date range, and accessible files rather than asserting universal non-existence.
+3. **Check Uncertainties, Confounders & Author Scope** — Inspect `± SD`/`SE`/`CI`, batch/sample identity, baseline controls, and incidental residues; never rewrite author-verified overlapping values as a positive difference, and conversely never treat overlapping error bars alone as proof of no significant difference without checking sample size, error type, statistical tests, and study design.
 4. **Separate Direct Measurements, Model Fits & Derived Math** — Distinguish directly reported observations from model parameters, extrapolations across mismatched phases/forms, and derived ratios/conversions/graph-read estimates (stating formulas and inputs).
-5. **Confirm Current Version & Provide Verifiable Anchors** — Verify the latest file/draft timestamp first and anchor every added datum or claim to its exact source (`author/year`, `section/table/figure/page`, or `file path/line`); report gaps explicitly rather than filling them.
+5. **Confirm Current Version & Provide Verifiable Anchors** — Verify the authoritative version (DOI, publication/version date, errata/retractions, supplementary files, and exact analyzed file) rather than relying on timestamps alone, and anchor every added datum or claim to its exact source (`author/year`, `DOI`/URL, `section/table/figure/page/paragraph`, or `file path/line`).
 
 *(Casual conversation is excluded from citation formatting overhead.)*
 
@@ -53,7 +53,7 @@ Copy `rules/AGENTS.md` into your global or project rule file (e.g., `AGENTS.md`,
 strict-evidence-guard/
 ├── plugin.json        # Antigravity plugin manifest
 ├── rules/
-│   └── AGENTS.md      # Always-on primary-source evidence rule (v1.1.0)
+│   └── AGENTS.md      # Always-on primary-source evidence rule (v1.2.0)
 ├── README.md
 ├── LICENSE
 └── .gitignore
